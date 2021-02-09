@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../../../App';
+import BusinessCard from '../BusinessCard/BusinessCard';
 import HeaderMain from '../HeaderMain/HeaderMain';
-import Navbars from '../Navbar/Navbar';
+import NavBar from '../Navbar/Navbar';
+import './Header.css'
 
 const Header = () => {
+    const [logedIn,setLogged]=useContext(UserContext)
+    console.log(logedIn)
     return (
-        <div> 
-            <Navbars/>
+        <div className='header'>
+            <NavBar/>
             <HeaderMain/>
+            <BusinessCard/>
         </div>
     );
 };
